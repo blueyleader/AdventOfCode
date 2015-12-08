@@ -1,0 +1,33 @@
+package com.blueyleader.adventofcode;
+
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+public class Day4_1 {
+
+	public static void main(String[] args) throws Exception {
+		String input="ckczppom";
+		String temp;
+		int x=0;
+		String out="1111111";
+		MessageDigest md = MessageDigest.getInstance("MD5");
+		while(!out.substring(0,5).equals("00000")){
+			x++;
+			temp=input+x;
+			md.reset();
+			md.update(temp.getBytes(),0,temp.length());	
+			byte[] thedigest = md.digest();
+			out=javax.xml.bind.DatatypeConverter.printHexBinary(thedigest);
+			
+			if(x/1000==(double)x/1000)
+			{
+				System.out.println(x);
+			}
+		}
+		System.out.println(out);
+		System.out.println(x);
+	}
+
+	
+}
