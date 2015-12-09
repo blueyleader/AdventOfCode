@@ -1,13 +1,17 @@
 package com.blueyleader.adventofcode;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Scanner;
 
 public class Day4_1 {
 
 	public static void main(String[] args) throws Exception {
-		String input="ckczppom";
+		File file = new File("day4.txt");
+		Scanner scan = new Scanner(file);
+		String input=scan.nextLine();
 		String temp;
 		int x=0;
 		String out="1111111";
