@@ -7,23 +7,19 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Day10_2 {
-
-	public final String a1 = "1";
-	public final String a2 = "11";
-	public final String a3 = "111";
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		String input;
 		File file = new File("day10.txt");
 		Scanner scan = new Scanner(file);
 		input=scan.nextLine();
-		for(int x=0;x<50;x++){
-			char l;
+		for(int x=0;x<40;x++){
+			char c,l;
 			int count=1;
 			String n="";
 			l=input.charAt(0);
-			for(char c: input.toCharArray()){
-				
+			for(int y=1;y<input.length();y++){
+				 c=input.charAt(y);
 				 if(c!=l){
 					n=n+count+l;
 					count=1;
@@ -31,17 +27,12 @@ public class Day10_2 {
 				 }
 				 else{
 					 count++;
-				}
+				 }
 			}
 			n=n+count+l;
-			input=n.toString();
-			System.out.println(x+ " "+input.length());
+			input=n;
 		}
 		System.out.println(input.length());
 	}
-	
-	
-	
-
 }
 
