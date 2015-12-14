@@ -24,18 +24,17 @@ public class Day12_2 {
 		
 		while(a!=-1 || b!=-1){
 			if(a<b){
-				stack.add(a);
+				stack.add(index);
 				a = input.indexOf('{',a);
+				index++;
 			}
 			else{
-				
 				int t=stack.pop();
 				if(input.indexOf("red",t)<b){
 					
 				}
 				b = input.indexOf('}',b);
 			}
-			
 		}
 		
 		
@@ -73,7 +72,7 @@ public class Day12_2 {
 		}
 		
 		
-		input.substring(beginIndex, endIndex)
+		//input.substring(beginIndex, endIndex)
 		
 		
 		return 0;
