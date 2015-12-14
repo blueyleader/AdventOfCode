@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Stack;
 
+
 public class Day12_2 {
 
 	public static void main(String[] args) throws FileNotFoundException {
@@ -59,5 +60,24 @@ public class Day12_2 {
 		System.out.println(total);
 		
 	}
+
+	public static int rec(String input){
+		
+		int index = input.indexOf('{');
+		int index2 = input.indexOf('[');
+		int index3 = input.indexOf('}');
+		int index4 = input.indexOf(']');
+		
+		if(index>index2){
+			index=index2;
+		}
+		
+		
+		input.substring(beginIndex, endIndex)
+		
+		
+		return 0;
+	}
+
 }
-//48-57
+
