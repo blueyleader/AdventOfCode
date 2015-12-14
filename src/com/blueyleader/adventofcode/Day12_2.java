@@ -1,82 +1,59 @@
 package com.blueyleader.adventofcode;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.Stack;
-
+import org.json.*;
 
 public class Day12_2 {
-
-	public static void main(String[] args) throws FileNotFoundException {
+	
+    public static void main(String[] args) throws Exception {
 		String input;
 		File file = new File("day12.txt");
 		Scanner scan = new Scanner(file);
 		input=scan.nextLine();
-		Stack<Integer> stack = new Stack<Integer>();
-		int[] dead = new int[1000];
-		int index=0;
-		int total=0;
-		String cur="";
+		input="["+input+"]";
 		
-		int a = input.indexOf('{');
-		int b = input.indexOf('}');
-		
-		while(a!=-1 || b!=-1){
-			if(a<b){
-				stack.add(index);
-				a = input.indexOf('{',a);
-				index++;
-			}
-			else{
-				int t=stack.pop();
-				if(input.indexOf("red",t)<b){
-					
-				}
-				b = input.indexOf('}',b);
-			}
-		}
-		
-		
-		
-		
-		
-		for(int x=0;x<input.length();x++){
-			char c=input.charAt(x);
-			if(c>47 && c<58){
-				if(cur.equals("")){
-					if(input.charAt(x-1)=='-')
-						cur="-";
-					}
-				cur=cur+c;		
-			}
-			else if(!cur.equals("")){
-				total+=Integer.parseInt(cur);
-				cur="";
-			}
-		}
-		
-		System.out.println(total);
-		
-	}
+        JSONArray obj = new JSONArray(input);
+        System.out.println(getValue(obj));
+    }
+    
+    public static int getValue(Object object) throws Exception {
+        if (object instanceof Integer){
+        	return (int) object;
+        }
+        if (object instanceof String){
+        	return 0;
+        }
 
-	public static int rec(String input){
-		
-		int index = input.indexOf('{');
-		int index2 = input.indexOf('[');
-		int index3 = input.indexOf('}');
-		int index4 = input.indexOf(']');
-		
-		if(index>index2){
-			index=index2;
-		}
-		
-		
-		//input.substring(beginIndex, endIndex)
-		
-		
-		return 0;
-	}
+        int total = 0;
+        if (object instanceof JSONArray) {
+            for (int i = 0; i < ((JSONArray)object).length(); ++i) {
+                try {
+                    int v1 = getValue(((JSONArray)object).get(i));
+                    total += v1;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            return total;
+        }
+
+        if (object instanceof JSONObject) {
+            JSONObject jsonObject = (JSONObject) object;
+            JSONArray names = jsonObject.names();
+            for (int i = 0; i < names.length(); ++i) {
+                String name = (String) names.get(i);
+                if (jsonObject.get(name).equals("red")) {
+                    return 0;
+                } else {
+                    total += getValue(jsonObject.get(name));
+                }
+            }
+            return total;
+        }
+
+        return 0;
+    }
+
 
 }
-
