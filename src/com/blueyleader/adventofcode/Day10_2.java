@@ -13,7 +13,7 @@ public class Day10_2 {
 		File file = new File("day10.txt");
 		Scanner scan = new Scanner(file);
 		input=scan.nextLine();
-		for(int x=0;x<40;x++){
+		for(int x=0;x<50;x++){
 			char c,l;
 			int count=1;
 			String n="";
