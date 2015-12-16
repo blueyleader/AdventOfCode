@@ -55,4 +55,3 @@ public class Day11_2 {
 		System.out.println(input);
 	}
 }
-

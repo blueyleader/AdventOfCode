@@ -47,10 +47,8 @@ public class Day2_1 {
 					total+=num2*num3;
 				}
 			}
-			
-			System.out.println(total);			
-			
 		}
+		System.out.println(total);
 	}
 
 }

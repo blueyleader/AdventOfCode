@@ -11,7 +11,7 @@ public class Day3_1 {
 		Scanner scan = new Scanner(file);
 		String input=scan.nextLine();
 		boolean[][] houses= new boolean[1000][1000];
-		
+		houses[500][500]=true;
 		int x=500;
 		int y=500;
 		
@@ -33,7 +33,7 @@ public class Day3_1 {
 			houses[x][y]=true;
 		}
 		
-		int count =1;
+		int count =0;
 		for(int a=0;a<1000;a++){
 			for(int b=0;b<1000;b++){
 				if(houses[a][b]){

@@ -51,12 +51,9 @@ public class Day11_1 {
 				}				
 			}
 			c=0;
-			System.out.println(input);
+			//System.out.println(input);
 		}
 		System.out.println(input);
-		System.out.println("hit2");
 	}
 
 }
-//a =97
-//z=122

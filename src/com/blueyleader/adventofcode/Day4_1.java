@@ -23,13 +23,8 @@ public class Day4_1 {
 			md.update(temp.getBytes(),0,temp.length());	
 			byte[] thedigest = md.digest();
 			out=javax.xml.bind.DatatypeConverter.printHexBinary(thedigest);
-			
-			if(x/1000==(double)x/1000)
-			{
-				System.out.println(x);
-			}
 		}
-		System.out.println(out);
+		//System.out.println(out);
 		System.out.println(x);
 	}
 

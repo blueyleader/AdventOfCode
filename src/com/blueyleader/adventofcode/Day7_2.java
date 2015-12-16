@@ -45,7 +45,7 @@ public class Day7_2 {
 					v2=map.get(var2);
 					v3=v1&v2;
 					map.put(var3, v3);
-					System.out.println(var3+ " "+v3);
+					//System.out.println(var3+ " "+v3);
 				}
 				else if(cur.contains("OR")){
 					index2=cur.indexOf(" OR");
@@ -56,7 +56,7 @@ public class Day7_2 {
 					v2=map.get(var2);
 					v3=v1|v2;
 					map.put(var3, v3);
-					System.out.println(var3+ " "+v3);
+					//System.out.println(var3+ " "+v3);
 				}
 				else if(cur.contains("NOT")){
 					var1=cur.substring(4,cur.indexOf(' ',4));
@@ -64,7 +64,7 @@ public class Day7_2 {
 					
 					v3=~v1&65535;
 					map.put(var3, v3);
-					System.out.println(var3+ " "+v3);
+					//System.out.println(var3+ " "+v3);
 				}
 				else if(cur.contains("LSHIFT")){
 					index2=cur.indexOf(" LSHIFT");
@@ -74,7 +74,7 @@ public class Day7_2 {
 					v1=map.get(var1);
 					v3=v1<<v2;
 					map.put(var3, v3);
-					System.out.println(var3+ " "+v3);
+					//System.out.println(var3+ " "+v3);
 				}
 				else if(cur.contains("RSHIFT")){
 					index2=cur.indexOf(" RSHIFT");
@@ -84,7 +84,7 @@ public class Day7_2 {
 					v1=map.get(var1);
 					v3=v1>>v2;
 					map.put(var3, v3);
-					System.out.println(var3+ " "+v3);
+					//System.out.println(var3+ " "+v3);
 				}
 				else{
 					if(!(second && var3.equals("b"))){
@@ -95,7 +95,7 @@ public class Day7_2 {
 							v3=map.get(cur.substring(0,cur.indexOf("->")-1));
 						}
 						map.put(var3,v3);
-						System.out.println(var3+ " "+v3);
+						//System.out.println(var3+ " "+v3);
 					}
 				}
 			
@@ -120,7 +120,7 @@ public class Day7_2 {
 			}
 		}
 
-		System.out.println(map.toString());
+		System.out.println(map.get("a"));
 	}
 
 }

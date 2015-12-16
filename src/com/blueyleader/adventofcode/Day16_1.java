@@ -164,7 +164,7 @@ public class Day16_1 {
 				}
 				
 				if(count==3){
-					System.out.println(input);
+					System.out.println(input.substring(4,input.indexOf(':')));
 					flag=false;
 				}
 				
