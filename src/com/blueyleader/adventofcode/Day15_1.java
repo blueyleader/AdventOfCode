@@ -62,12 +62,7 @@ public class Day15_1 {
 				}
 			}
 		}
-		System.out.println(low);
-		
-	}
-	
-	public static void rec(int[] nums){
-		
+		System.out.println(low);	
 	}
 
 }
