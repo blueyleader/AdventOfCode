@@ -2,11 +2,9 @@ package com.blueyleader.adventofcode;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
-public class Day17_2 {
+public class Day17 {
 
 	static int max, c;
 	static int [] data, nums;
@@ -29,13 +27,17 @@ public class Day17_2 {
 		for(int x=0;x<20;x++){
 			rec(data[x],x+1,1);
 		}
+		
+		System.out.println(c);
+		
 		int low=Integer.MAX_VALUE;
-		for(int x=0;x<nums.length;x++){
+		for(int x=0;x<c;x++){
 			if(nums[x]<low && nums[x]!=0)
 			{
 				low=nums[x];
 			}
 		}
+		
 		c=0;
 		for(int x=0;x<nums.length;x++){
 			if(nums[x]==low)
