@@ -31,12 +31,9 @@ public class Day22_1 {
 	}
 	
 	public static void rec(int mana,int health,int hit,ArrayList<int[]> effects,int used){
-		int armor=0;
+		
 		for(int x=effects.size()-1;x>=0;x--){
-			if(effects.get(x)[0]==0){
-				armor+=7;	
-			}
-			else if(effects.get(x)[0]==1){
+			if(effects.get(x)[0]==1){
 				hit-=3;
 			}
 			else if(effects.get(x)[0]==2){
@@ -67,7 +64,7 @@ public class Day22_1 {
 			}
 			else if(x==1){
 				//Drain
-				if(mana>73){
+				if(mana>=73){
 					curMana-=73;
 					curUsed+=73;
 					curHit-=2;
@@ -79,7 +76,7 @@ public class Day22_1 {
 			}
 			else if(x==2){
 				//Sheild
-				if(mana>113){
+				if(mana>=113){
 					curMana-=113;
 					curUsed+=113;
 					curEffects.add(new int[]{0,7});
@@ -90,7 +87,7 @@ public class Day22_1 {
 			}
 			else if(x==3){
 				//Poison
-				if(mana>173){
+				if(mana>=173){
 					curMana-=173;
 					curUsed+=173;
 					curEffects.add(new int[]{1,7});
@@ -101,7 +98,7 @@ public class Day22_1 {
 			}
 			else if(x==4){
 				//Recharge
-				if(mana>229){
+				if(mana>=229){
 					curMana-=229;
 					curUsed+=229;
 					curEffects.add(new int[]{2,6});
@@ -110,7 +107,9 @@ public class Day22_1 {
 					continue;
 				}
 			}	
-			
+			if(curHit<low){
+				low=curHit;
+			}
 			if(curHit<1 && curUsed<low){
 				low=curUsed;
 			}
