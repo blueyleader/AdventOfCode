@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Day22_1 {
+public class Day22_2 {
 	
 	static int starthp=50;
 	static int startmana=500;
@@ -26,7 +26,7 @@ public class Day22_1 {
 		scan.next();
 		bossdamage = scan.nextInt();
 		
-	    fight(starthp,startmana,bosshitpoints,0,0,0,0,0,false);
+	    fight(starthp,startmana,bosshitpoints,0,0,0,0,0,true);
 	    System.out.println(minmana);
 
 	}   
