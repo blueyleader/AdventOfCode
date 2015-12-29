@@ -15,7 +15,7 @@ public class Day10_0 {
 		data2=input.toCharArray();
 		int counter;
 		for(int x=0;x<50;x++){
-			System.out.println(x+" "+ data2.length);
+			//System.out.println(x+" "+ data2.length);
 			counter=0;
 			data=new char[data2.length*2];
 			char c,l;
